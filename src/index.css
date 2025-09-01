@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap&subset=latin-ext');
+@import "tailwindcss";
+
+@layer components {
+ 
+  .heading-primary {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: #F7DC7B;
+  }
+  
+  .heading-secondary {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    color: #D4AC45;
+  }
+  
+  .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #D4AC45;
+  }
+  
+  .body-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: gainsboro; 
+  }
+  
+  .btn-gold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: #B27E11;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-gold:hover {
+    background-color: #BF8F26;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(178, 126, 17, 0.3);
+  }
+
+  .navbar-container {
+      margin: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(178, 126, 17, 0.2);
+  }
+  
+  .logo-text {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: #F7DC7B;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #F7DC7B;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-link:hover {
+    color: white;
+    background-color: rgba(178, 126, 17, 0.2);
+    transform: translateY(-1px);
+  }
+  
+  .nav-link.active {
+    background-color: #B27E11;
+    color: white;
+    box-shadow: 0 4px 12px rgba(178, 126, 17, 0.4);
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #F7DC7B, #B27E11);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .nav-link:hover::after {
+    width: 80%;
+  }
+  
+  .divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #BF8F26, #D4AC45, #BF8F26, transparent);
+    margin: 0;
+    opacity: 0.7;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-mobile {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+    
+    .nav-links-mobile {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}
