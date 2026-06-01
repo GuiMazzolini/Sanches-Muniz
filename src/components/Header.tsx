@@ -1,11 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { CONTACT } from "../config/site";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((open) => !open);
   };
 
   const closeMobileMenu = () => {
@@ -15,10 +16,11 @@ const Header = () => {
   return (
     <>
       <header className="navbar-container pt-6 pb-6 bg-slate-900 relative">
-        <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6">
-          <h1 className="logo-text md:text-2xl">Sanches & Muniz</h1>
+        <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6" aria-label="Principal">
+          <Link to="/" className="logo-text md:text-2xl hover:text-white transition-colors">
+            Sanches & Muniz
+          </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-2">
             <NavLink
               to="/"
@@ -27,10 +29,10 @@ const Header = () => {
                 isActive ? "nav-link active" : "nav-link"
               }
             >
-              Home
+              Início
             </NavLink>
             <NavLink
-              to="/about"
+              to="/quem-somos"
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
@@ -55,10 +57,13 @@ const Header = () => {
             </NavLink>
           </div>
 
-          <button 
+          <button
+            type="button"
             className="md:hidden text-[#F7DC7B] z-50 relative"
             onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
+            aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav"
           >
             <svg
               className={`w-6 h-6 transform transition-transform duration-300 ${
@@ -88,13 +93,14 @@ const Header = () => {
         </nav>
 
         <div
+          id="mobile-nav"
           className={`md:hidden absolute top-full left-0 w-full bg-slate-900 z-40 transform transition-all duration-300 ease-in-out ${
             isMobileMenuOpen
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <nav className="max-w-7xl mx-auto px-4 py-4">
+          <nav className="max-w-7xl mx-auto px-4 py-4" aria-label="Mobile">
             <div className="flex flex-col space-y-4">
               <NavLink
                 to="/"
@@ -104,10 +110,10 @@ const Header = () => {
                 }
                 onClick={closeMobileMenu}
               >
-                Home
+                Início
               </NavLink>
               <NavLink
-                to="/about"
+                to="/quem-somos"
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
@@ -143,7 +149,7 @@ const Header = () => {
       </div>
 
       <a
-        href="https://wa.me/5511939398561?text=Olá,%20gostaria%20de%20mais%20informações"
+        href={CONTACT.whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 z-50"

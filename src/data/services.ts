@@ -5,49 +5,49 @@ export const services: Service[] = [
     id: 'direito-civil',
     title: 'Direito Civil',
     description: 'Contratos, responsabilidade civil, direitos reais e questões patrimoniais.',
-    icon: '⚖️'
+    icon: 'civil'
   },
   {
     id: 'direito-empresarial',
     title: 'Direito Empresarial',
     description: 'Constituição de empresas, contratos comerciais e assessoria corporativa.',
-    icon: '🏢'
+    icon: 'empresarial'
   },
   {
     id: 'direito-previdenciario',
     title: 'Direito Previdenciário',
     description: 'Benefícios do INSS, aposentadorias e revisões previdenciárias.',
-    icon: '👥'
+    icon: 'previdenciario'
   },
   {
     id: 'direito-penal',
     title: 'Direito Penal',
     description: 'Defesa criminal, processos penais e medidas cautelares.',
-    icon: '🛡️'
+    icon: 'penal'
   },
   {
     id: 'direito-trabalhista',
     title: 'Direito Trabalhista',
     description: 'Relações de trabalho, rescisões e direitos dos trabalhadores.',
-    icon: '👷'
+    icon: 'trabalhista'
   },
   {
     id: 'direito-tributario',
     title: 'Direito Tributário',
     description: 'Planejamento fiscal, defesa em autuações e recuperação de créditos.',
-    icon: '💰',
+    icon: 'tributario',
   },
   {
     id: 'direito-consumidor',
     title: 'Direito do Consumidor',
     description: 'Proteção de direitos em relações de consumo e defesa contra práticas abusivas.',
-    icon: '🛒'
+    icon: 'consumidor'
   },
   {
     id: 'detran-jari',
     title: 'DETRAN / JARI',
     description: 'Recursos de trânsito, defesas de autuação e habilitação.',
-    icon: '🚗'
+    icon: 'detran'
   }
 ];
 
@@ -56,7 +56,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     id: 'direito-civil',
     title: 'Direito Civil',
     description: 'Soluções jurídicas completas para questões civis, contratos e direitos patrimoniais',
-    icon: '⚖️',
+    icon: 'civil',
     fullDescription: 'Nosso escritório conta com advogados civis altamente capacitados, que atuam tanto na prevenção quanto na solução de conflitos. Atuamos em processos judiciais e consultoria jurídica, oferecendo assessoria para pessoas físicas e empresas que buscam um escritório de advocacia em Direito Civil confiável e eficiente.',
     whatIs: 'O Direito Civil é um dos principais ramos do direito brasileiro, regulamentando todas as relações privadas entre pessoas físicas e jurídicas. Trata de questões essenciais no dia a dia, incluindo contratos, imóveis, inventários, pensão alimentícia, divórcio, testamento, reconhecimento de união estável, cobranças judiciais e indenização por danos morais e materiais. Sempre que surge um problema envolvendo propriedade, família ou contratos, um advogado especialista em Direito Civil é fundamental para garantir segurança e a proteção de direitos.',
     areasOfActuation: [ 
@@ -91,7 +91,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       id: 'direito-empresarial',
       title: 'Direito Empresarial',
       description: 'Assessoria completa para empresas em constituição, contratos e questões corporativas',
-      icon: '🏢',
+      icon: 'empresarial',
       fullDescription: 'Oferecemos assessoria integral para questões como abertura de empresas, elaboração de contratos, dissoluções societárias, recuperação de crédito, consultoria empresarial e gestão de riscos jurídicos.',
       whatIs: 'O Direito Empresarial reúne normas que regulamentam as atividades de empresas, desde constituição, contratos, relações entre sócios até conflitos comerciais e liquidações. Possuir o suporte de um escritório de advocacia empresarial é garantir segurança jurídica e crescimento saudável para seu negócio.',
       areasOfActuation: [
@@ -115,7 +115,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       id: 'direito-previdenciario',
       title: 'Direito Previdenciário',
       description: 'Especialistas em benefícios do INSS, aposentadorias e questões previdenciárias',
-      icon: '👥',
+      icon: 'previdenciario',
       fullDescription: 'Nosso escritório atua em consultoria, requerimentos administrativos e judiciais, assegurando que o cliente receba seu direito à aposentadoria, revisão de benefício, auxílio-doença e outros benefícios previdenciários.',
       whatIs: 'O Direito Previdenciário é o ramo do direito que regula o acesso aos benefícios concedidos pela Previdência Social, como aposentadorias, pensões, auxílios e outros direitos destinados a proteger o trabalhador e sua família em momentos de necessidade. Esse conjunto de normas garante amparo financeiro em situações como idade avançada, incapacidade para o trabalho, doença, acidente, maternidade ou morte do provedor. Muitas vezes, o acesso a esses benefícios pode ser dificultado por exigências burocráticas, interpretações do INSS ou negativas injustas. Por isso, a atuação de um advogado previdenciário é essencial para orientar o cidadão sobre seus direitos, calcular o melhor benefício, reunir a documentação necessária, registrar pedidos e, caso haja recusa, atuar em todas as instâncias administrativas e judiciais até que o direito seja reconhecido.',
       areasOfActuation: [
@@ -143,7 +143,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       id: 'direito-penal',
       title: 'Direito Penal',
       description: 'Defesa criminal especializada em processos penais e medidas cautelares',
-      icon: '🛡️',
+      icon: 'penal',
       fullDescription: 'Nosso escritório de advocacia criminal oferece defesa dedicada, técnica e comprometida com a proteção dos direitos fundamentais de nossos clientes, desde a investigação policial até o processo judicial, garantindo os direitos dos clientes em processos criminais complexos ou situações de emergência, zelando sempre pela observância plena dos direitos do cidadão.',
       whatIs: 'O Direito Penal ou Direito Criminal define condutas consideradas crimes e regula as punições previstas na lei. Atua na proteção do cidadão diante de qualquer acusação, assegurando ampla defesa em todas as fases do processo. Contar com um advogado criminalista experiente é fundamental em casos de acusações criminais, crimes tributários, crimes patrimoniais, audiências de custódia e execução penal.',
       areasOfActuation: [
@@ -172,14 +172,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
           description: 'Prestamos assessoria e adotamos medidas para a obtenção de benefícios legais, como progressão de regime, livramento condicional, remição de pena, além de acompanhamento e orientação durante o cumprimento de penas privativas de liberdade ou restritivas de direitos.'
         }
       ],
-      relatedServices: ['direito-administrativo'],
+      relatedServices: ['direito-tributario', 'detran-jari'],
     },
 
     'direito-trabalhista': {
       id: 'direito-trabalhista',
       title: 'Direito Trabalhista',
       description: 'Especialistas em relações de trabalho e direitos dos trabalhadores',
-      icon: '👷',
+      icon: 'trabalhista',
       fullDescription: 'Nosso escritório presta assessoria jurídica trabalhista para empresas e trabalhadores, atuando tanto em consultoria preventiva quanto na defesa de processos na Justiça do Trabalho. Buscamos sempre a proteção de direitos, a prevenção de passivos e a resolução rápida dos conflitos.',
       whatIs: 'O Direito do Trabalho abrange todas as normas, direitos e deveres que envolvem a relação entre empregadores e empregados. Questões como registro na carteira, pagamento de horas extras, insalubridade, FGTS, rescisão, demissão por justa causa, acordos trabalhistas e processos trabalhistas são cada vez mais frequentes e exigem orientação de um advogado trabalhista especialista.',
       areasOfActuation: [
@@ -207,7 +207,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       id: 'direito-tributario',
       title: 'Direito Tributário',
       description: 'Planejamento fiscal e defesa em questões tributárias',
-      icon: '💰',
+      icon: 'tributario',
       fullDescription: 'Nosso escritório reúne experiência em consultoria tributária, defesa contra autuações, negociação de dívidas e recuperação de créditos tributários, protegendo o cliente de prejuízos e penalidades municipais, estaduais e federais.',
       whatIs: 'O Direito Tributário é indispensável para empreendedores e pessoas físicas que buscam regularidade fiscal. Ele compreende desde planejamento tributário, defesas em autos de infração, restituição de impostos, parcelamento de dívidas fiscais, consultoria tributária e execução fiscal.',
       areasOfActuation: [
@@ -232,14 +232,14 @@ export const serviceDetails: Record<string, ServiceDetail> = {
           description: 'Auxílio completo na negociação de dívidas fiscais, orientação sobre programas de regularização tributária e acompanhamento de processos de parcelamento junto aos órgãos competentes.'
         }
       ],
-      relatedServices: ['direito-empresarial', 'direito-administrativo'],
+      relatedServices: ['direito-empresarial', 'direito-penal'],
     },
 
     'direito-consumidor': {
       id: 'direito-consumidor',
       title: 'Direito do Consumidor',
       description: 'Proteção de consumidores e defesa de empresas em relações de consumo',
-      icon: '🛒',
+      icon: 'consumidor',
       fullDescription: 'Nosso escritório possui advogados de defesa do consumidor especializados em proteger os direitos de quem compra produtos ou utiliza serviços, defendendo contra práticas abusivas, cobranças indevidas e produtos defeituosos. Também orientamos empresas a evitar sanções e litígios, atuando tanto para consumidores quanto para fornecedores em todas as questões relacionadas às relações de consumo.',
       whatIs: 'O Direito do Consumidor é dedicado à proteção de quem compra produtos ou utiliza serviços, estabelecendo regras para as relações entre consumidores e fornecedores. Abrange desde indenizações por defeitos, cobranças abusivas, rescisão de contratos, negativa de garantia, até casos de nome negativado indevidamente. É fundamental contar com um advogado especialista para garantir o cumprimento dos direitos previstos no Código de Defesa do Consumidor.',
       areasOfActuation: [
@@ -275,7 +275,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       id: 'detran-jari',
       title: 'DETRAN / JARI',
       description: 'Recursos de trânsito e defesas especializadas',
-      icon: '🚗',
+      icon: 'detran',
       fullDescription: 'Especialistas em defesa de autuações de trânsito, recursos administrativos e questões relacionadas à habilitação, oferecendo atendimento especializado para proteger os direitos dos condutores.',
       whatIs: 'Área especializada na defesa dos direitos dos condutores junto aos órgãos de trânsito, contestando multas e infrações indevidas, buscando sempre a aplicação correta da legislação de trânsito e a proteção dos direitos dos condutores.',
       areasOfActuation: [

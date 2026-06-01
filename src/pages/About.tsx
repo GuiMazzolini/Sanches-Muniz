@@ -1,11 +1,23 @@
-const About = () => {
+import { useNavigate } from 'react-router-dom';
+import OptimizedImage from '../components/OptimizedImage';
+import PageMeta from '../components/PageMeta';
+import { pageSeo } from '../config/seo';
 
-    const handleContactClick = (): void => {
-    window.location.href = '/contato';
+const About = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = (): void => {
+    navigate('/contato');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+      <PageMeta
+        title={pageSeo.about.title}
+        description={pageSeo.about.description}
+        path={pageSeo.about.path}
+      />
 
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -19,18 +31,44 @@ const About = () => {
         </div>
       </section>
 
+      <section className="pb-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative group">
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-[#B27E11] to-[#D4AC45] rounded-lg blur opacity-25 group-hover:opacity-40 transition-opacity"
+              aria-hidden="true"
+            />
+            <OptimizedImage
+              src="/time2.jpeg"
+              webpSrc="/time2.webp"
+              alt="Dra. Leticia C. Muniz e Dra. Camilla Sanches, sócias fundadoras do escritório Sanches & Muniz"
+              className="relative w-full h-auto rounded-lg shadow-2xl border-2 border-[#BF8F26]"
+              width={1200}
+              height={800}
+              loading="eager"
+            />
+          </div>
+          <p className="subtitle text-center text-sm mt-4">
+            Dra. Leticia C. Muniz e Dra. Camilla Sanches — Sócias fundadoras
+          </p>
+        </div>
+      </section>
+
       <section className="py-8 px-4">
         <div className="max-w-6xl mx-auto space-y-16">
           
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative group aspect-square"> 
-                <div className="absolute inset-0 bg-gradient-to-r from-[#B27E11] to-[#D4AC45] rounded-lg blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
-                <img 
-                    src="/muniz.jpeg" 
-                    alt="Dra. Leticia Muniz"
-                    className="relative w-full h-full object-cover rounded-lg shadow-2xl border-2 border-[#BF8F26] transition-transform duration-300 group-hover:scale-105"
-                    style={{ objectPosition: "50% 45%" }}
-                />
+            <div className="relative group aspect-square overflow-hidden rounded-lg">
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-[#B27E11] to-[#D4AC45] rounded-lg blur opacity-25 group-hover:opacity-40 transition-opacity"
+                aria-hidden="true"
+              />
+              <OptimizedImage
+                src="/muniz.jpeg"
+                webpSrc="/muniz.webp"
+                alt="Dra. Leticia Muniz"
+                className="relative w-full h-full object-cover object-[50%_38%] rounded-lg shadow-2xl border-2 border-[#BF8F26] transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
             
             <div className="space-y-6">
@@ -66,14 +104,17 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="md:order-2 relative group aspect-square"> 
-                <div className="absolute inset-0 bg-gradient-to-r from-[#B27E11] to-[#D4AC45] rounded-lg blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
-                <img 
-                    src="/sanches.jpeg" 
-                    alt="Dra. Camilla Sanches"
-                    className="relative w-full h-full object-cover  rounded-lg shadow-2xl border-2 border-[#BF8F26] transition-transform duration-300 group-hover:scale-105"
-                    style={{ objectPosition: "50% 25%" }}
-                />
+            <div className="md:order-2 relative group aspect-square overflow-hidden rounded-lg">
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-[#B27E11] to-[#D4AC45] rounded-lg blur opacity-25 group-hover:opacity-40 transition-opacity"
+                aria-hidden="true"
+              />
+              <OptimizedImage
+                src="/sanches.jpeg"
+                webpSrc="/sanches.webp"
+                alt="Dra. Camilla Sanches"
+                className="relative w-full h-full object-cover object-[50%_10%] rounded-lg shadow-2xl border-2 border-[#BF8F26] transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
             
             <div className="md:order-1 space-y-6">
@@ -119,7 +160,6 @@ const About = () => {
             <button 
               onClick={handleContactClick}
               className="bg-[#B27E11] hover:bg-[#BF8F26] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-              style={{fontFamily: 'Montserrat, sans-serif'}}
               type="button"
             >
               Entre em Contato

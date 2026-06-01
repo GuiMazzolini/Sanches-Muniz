@@ -1,18 +1,30 @@
+import { useNavigate } from 'react-router-dom';
+import PageMeta from '../components/PageMeta';
 import ServiceCard from '../components/ServiceCard';
+import { pageSeo } from '../config/seo';
 import type { Service, ServicesPageProps } from '../types/services';
 import { services } from '../data/services';
 
 const ServicesPage: React.FC<ServicesPageProps> = () => {
+  const navigate = useNavigate();
+
   const handleServiceClick = (service: Service): void => {
-    window.location.href = `/servicos/${service.id}`;
+    navigate(`/servicos/${service.id}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleContactClick = (): void => {
-    window.location.href = '/contato';
+    navigate('/contato');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+      <PageMeta
+        title={pageSeo.services.title}
+        description={pageSeo.services.description}
+        path={pageSeo.services.path}
+      />
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl heading-primary mb-6" >

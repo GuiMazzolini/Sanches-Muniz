@@ -1,8 +1,11 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import PageMeta from '../components/PageMeta';
+import { getServicePageSeo, pageSeo } from '../config/seo';
 import type { ServiceDetail, Service } from '../types/services';
 import { getServiceDetailById, getRelatedServices } from '../data/services';
 import ServiceCard from '../components/ServiceCard';
+import ServiceIcon from '../components/ServiceIcon';
 
 interface ServiceDetailPageProps {}
 
@@ -17,9 +20,17 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = () => {
 
   const serviceDetail: ServiceDetail | undefined = getServiceDetailById(serviceId);
   const relatedServices: Service[] = getRelatedServices(serviceId);
+  const seo = getServicePageSeo(serviceId);
 
   if (!serviceDetail) {
     return (
+      <>
+      <PageMeta
+        title="Serviço não encontrado"
+        description={pageSeo.services.description}
+        path={`/servicos/${serviceId}`}
+        noIndex
+      />
       <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl heading-primary mb-4">Serviço não encontrado</h1>
@@ -31,11 +42,13 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = () => {
           </button>
         </div>
       </div>
+      </>
     );
   }
 
   const handleContactClick = (): void => {
-    window.location.href = '/contato';
+    navigate('/contato');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleServiceClick = (service: Service): void => {
@@ -44,6 +57,14 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = () => {
   };
 
   return (
+    <>
+    {seo && (
+      <PageMeta
+        title={seo.title}
+        description={seo.description}
+        path={seo.path}
+      />
+    )}
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -60,7 +81,9 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = () => {
           </nav>
 
           <div className="text-center">
-            <div className="text-6xl mb-6">{serviceDetail.icon}</div>
+            <div className="flex justify-center mb-6">
+              <ServiceIcon icon={serviceDetail.icon} className="w-14 h-14 text-[#D4AC45]" />
+            </div>
             <h1 className="text-4xl md:text-5xl heading-primary mb-6">
               {serviceDetail.title}
             </h1>
@@ -148,6 +171,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = () => {
         </section>
       )}
     </div>
+    </>
   );
 };
 
