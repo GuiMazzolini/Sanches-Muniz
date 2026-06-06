@@ -27,4 +27,5 @@ export const SOCIAL = {
 export const ANALYTICS = {
   enabled: import.meta.env.VITE_ANALYTICS_ENABLED === 'true',
   plausibleDomain: import.meta.env.VITE_PLAUSIBLE_DOMAIN as string | undefined,
+  clarityProjectId: import.meta.env.VITE_CLARITY_PROJECT_ID as string | undefined,
 } as const;

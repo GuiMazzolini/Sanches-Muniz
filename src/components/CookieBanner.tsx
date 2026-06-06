@@ -1,32 +1,34 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ANALYTICS } from '../config/site';
-
-const CONSENT_KEY = 'sm-cookie-consent';
+import {
+  getAnalyticsConsent,
+  isAnalyticsConfigured,
+  loadAnalytics,
+  setAnalyticsConsent,
+} from '../lib/analytics';
 
 const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!ANALYTICS.enabled) return;
-    if (localStorage.getItem(CONSENT_KEY)) return;
-    setVisible(true);
+    if (!isAnalyticsConfigured()) return;
+
+    const consent = getAnalyticsConsent();
+    if (consent === 'accepted') {
+      loadAnalytics();
+      return;
+    }
+    if (!consent) setVisible(true);
   }, []);
 
   const accept = () => {
-    localStorage.setItem(CONSENT_KEY, 'accepted');
+    setAnalyticsConsent('accepted');
     setVisible(false);
-    if (ANALYTICS.plausibleDomain) {
-      const script = document.createElement('script');
-      script.defer = true;
-      script.dataset.domain = ANALYTICS.plausibleDomain;
-      script.src = 'https://plausible.io/js/script.js';
-      document.head.appendChild(script);
-    }
+    loadAnalytics();
   };
 
   const decline = () => {
-    localStorage.setItem(CONSENT_KEY, 'declined');
+    setAnalyticsConsent('declined');
     setVisible(false);
   };
 
@@ -40,14 +42,19 @@ const CookieBanner = () => {
     >
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
         <p className="body-text text-sm flex-1">
-          Utilizamos cookies analíticos para melhorar o site. Ao continuar, você concorda com nossa{' '}
+          Utilizamos cookies e ferramentas de análise (como mapas de calor) para entender como o
+          site é usado e melhorá-lo. Ao continuar, você concorda com nossa{' '}
           <Link to="/privacidade" className="text-[#D4AC45] hover:text-[#F7DC7B] underline">
             Política de Privacidade
           </Link>
           .
         </p>
         <div className="flex flex-wrap gap-3 shrink-0">
-          <button type="button" onClick={decline} className="px-4 py-2 text-sm text-[#F7DC7B] border border-slate-600 rounded-lg hover:bg-slate-800 transition-colors">
+          <button
+            type="button"
+            onClick={decline}
+            className="px-4 py-2 text-sm text-[#F7DC7B] border border-slate-600 rounded-lg hover:bg-slate-800 transition-colors"
+          >
             Recusar
           </button>
           <button type="button" onClick={accept} className="btn-gold text-sm py-2 px-6">

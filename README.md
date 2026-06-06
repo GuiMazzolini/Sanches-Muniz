@@ -23,8 +23,9 @@ Copie `.env.example` para `.env`:
 | Variável | Descrição |
 |----------|-----------|
 | `VITE_SITE_URL` | URL canônica (ex.: `https://www.sanchesemuniz.com`) |
-| `VITE_ANALYTICS_ENABLED` | `true` para exibir banner de cookies e carregar Plausible |
-| `VITE_PLAUSIBLE_DOMAIN` | Domínio no Plausible (se analytics ativo) |
+| `VITE_ANALYTICS_ENABLED` | `true` para exibir banner de cookies e carregar ferramentas após consentimento |
+| `VITE_CLARITY_PROJECT_ID` | ID do projeto no [Microsoft Clarity](https://clarity.microsoft.com) (mapas de calor e gravações) |
+| `VITE_PLAUSIBLE_DOMAIN` | Domínio no Plausible (opcional, estatísticas agregadas) |
 
 ## Imagens
 

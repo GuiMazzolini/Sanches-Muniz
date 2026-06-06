@@ -41,7 +41,7 @@ const About = () => {
             <OptimizedImage
               src="/time2.jpeg"
               webpSrc="/time2.webp"
-              alt="Dra. Leticia C. Muniz e Dra. Camilla Sanches, sócias fundadoras do escritório Sanches & Muniz"
+              alt="Dra. Camilla Sanches e Dra. Leticia C. Muniz, sócias fundadoras do escritório Sanches & Muniz"
               className="relative w-full h-auto rounded-lg shadow-2xl border-2 border-[#BF8F26]"
               width={1200}
               height={800}
@@ -49,7 +49,7 @@ const About = () => {
             />
           </div>
           <p className="subtitle text-center text-sm mt-4">
-            Dra. Leticia C. Muniz e Dra. Camilla Sanches — Sócias fundadoras
+          Dra. Camilla Sanches e Dra. Leticia C. Muniz — Sócias fundadoras
           </p>
         </div>
       </section>

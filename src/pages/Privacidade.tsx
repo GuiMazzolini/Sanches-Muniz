@@ -4,7 +4,7 @@ import PageMeta from '../components/PageMeta';
 import { pageSeo } from '../config/seo';
 import { CONTACT, SITE_NAME } from '../config/site';
 
-const LAST_UPDATED = '30 de maio de 2026';
+const LAST_UPDATED = '1 de junho de 2026';
 
 const Section = ({
   title,
@@ -76,9 +76,9 @@ const Privacidade = () => {
                   mensagens enviadas por você.
                 </li>
                 <li>
-                  <strong>Navegação no site:</strong> dados técnicos, como endereço IP, tipo de
-                  navegador, páginas visitadas e data/hora de acesso, por meio de cookies
-                  essenciais ou ferramentas de análise, quando aplicável.
+                  <strong>Navegação no site:</strong> dados técnicos (endereço IP, navegador,
+                  páginas visitadas, cliques, rolagem e interações), quando você aceitar cookies
+                  analíticos.
                 </li>
               </ul>
               <p>
@@ -95,7 +95,11 @@ const Privacidade = () => {
                 <li>Prestar assessoria e serviços jurídicos, quando houver relação contratual;</li>
                 <li>Cumprir obrigações legais e regulatórias aplicáveis à advocacia;</li>
                 <li>Garantir a segurança e o funcionamento técnico do site;</li>
-                <li>Melhorar a experiência de navegação, quando houver uso de cookies analíticos.</li>
+                <li>Melhorar a experiência de navegação com cookies analíticos (após consentimento);</li>
+                <li>
+                  Analisar o uso do site (mapas de calor, gravações de sessão anonimizadas) para
+                  aprimorar conteúdo e layout.
+                </li>
               </ul>
             </Section>
 
@@ -135,7 +139,16 @@ const Privacidade = () => {
                   <strong>Meta / WhatsApp</strong> — quando você optar por esse canal de contato;
                 </li>
                 <li>
-                  <strong>Provedores de hospedagem e infraestrutura</strong> do site.
+                  <strong>Provedores de hospedagem e infraestrutura</strong> do site;
+                </li>
+                <li>
+                  <strong>Microsoft Clarity</strong> — ferramenta de análise de comportamento
+                  (mapas de calor, rolagem e gravações de sessão), nos EUA, quando você aceitar
+                  cookies analíticos;
+                </li>
+                <li>
+                  <strong>Plausible Analytics</strong> — estatísticas agregadas de visitas, na UE,
+                  quando configurado e aceito.
                 </li>
               </ul>
               <p>
@@ -146,9 +159,9 @@ const Privacidade = () => {
 
             <Section title="6. Transferência internacional">
               <p>
-                Alguns prestadores de serviço (como o Formspree) podem processar dados fora do
-                Brasil. Nesses casos, adotamos cláusulas e garantias compatíveis com a LGPD para
-                assegurar nível adequado de proteção.
+                Alguns prestadores de serviço (como o Formspree e a Microsoft Clarity) podem
+                processar dados fora do Brasil. Nesses casos, adotamos cláusulas e garantias
+                compatíveis com a LGPD para assegurar nível adequado de proteção.
               </p>
             </Section>
 
@@ -206,24 +219,27 @@ const Privacidade = () => {
               </p>
             </Section>
 
-            <Section title="10. Cookies">
+            <Section title="10. Cookies e ferramentas de análise">
               <p>
-                Cookies são pequenos arquivos armazenados no seu navegador. Utilizamos, conforme o
-                caso:
+                Cookies são pequenos arquivos armazenados no seu navegador. Utilizamos:
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  <strong>Cookies essenciais:</strong> necessários ao funcionamento do site (não
-                  exigem consentimento).
+                  <strong>Cookies essenciais:</strong> necessários ao funcionamento do site (por
+                  exemplo, registrar sua preferência de cookies). Não exigem consentimento.
                 </li>
                 <li>
-                  <strong>Cookies analíticos:</strong> apenas se forem implementados no futuro, com
-                  opção de aceite quando exigido pela lei.
+                  <strong>Cookies analíticos:</strong> carregados somente após você clicar em
+                  &quot;Aceitar&quot; no banner. Incluem o <strong>Microsoft Clarity</strong>, que
+                  registra interações como cliques, rolagem e sessões de navegação para mapas de
+                  calor e melhorias no site. Você pode recusar no banner; nesse caso, essas
+                  ferramentas não são ativadas.
                 </li>
               </ul>
               <p>
                 Você pode gerenciar ou desativar cookies nas configurações do seu navegador. A
-                desativação de cookies essenciais pode afetar partes do site.
+                desativação de cookies essenciais pode afetar partes do site. Para revogar o
+                consentimento, limpe os dados do site no navegador ou entre em contato conosco.
               </p>
             </Section>
 
